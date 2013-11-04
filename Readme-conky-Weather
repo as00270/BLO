@@ -1,0 +1,44 @@
+##################
+#  Conky & ConkyWeather  #
+##################
+
+Are now included 2 verssions of the conky theme
+1st version more minimalistic- works better with more backgrounds - and eliminated the overlay problem in gnome-shell 3.9 - 3.9.2
+Does not include conky weather - see screenshot1.jpg 
+As there is now a really good gnome-shell weather plugin 
+
+2nd version: "Old version" .conkyrc-complete
+Rename it in .conkyrc to use it
+
+Feel free to optimize it for your needs - most parts in the script are well documentated
+(Thanks for any suggestion)
+
+If you use the minimalistic version (.conkyrc) no need to install conkyforecast
+
+
+#############
+#  English  #
+#############
+
+Install - if you want to use the weather conky theme
+
+
+1. Unpack the downloaded archive
+2. Move files .conkyrc to your home folder
+3. Open files .conkyrc and .conkyForecast.config and rewrite all LUXX0003 to zip code of your city, for example my is EZXX0029. Your zip code can check on http://xoap.weather.com/search/search?where=YOUR CITY
+4. You must install conkyForecast
+	5.1 ubuntu/debian -install conkyforecast 
+	    wget https://launchpadlibrarian.net/88886459/conkyforecast_2.24_all.deb 
+	    sudo dpkg -i conkyforecast_2.24_all.deb
+    (conkyforecast is unfortunately not includedin ubuntu) 
+	If you get an error "Missing dependencies" (or similar), please run: 
+	    "sudo apt-get -f install"
+5. Done!
+For full conkyforecast theme (weather conky 1.1)- - please download it at 
+http://gnome-look.org/content/show.php/Weather+Conky?content=153462
+
+For installation of new icons you must run commands
+    sudo mv /usr/share/conkyforecast/images/weathericons /usr/share/conkyforecast/images/weathericons.old
+    sudo mv ~/weathericons /usr/share/conkyforecast/images/weathericons
+
+Shown on the screenshot are std- icons

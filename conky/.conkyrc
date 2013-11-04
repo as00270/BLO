@@ -1,0 +1,119 @@
+#.conkyrc :
+
+# Conky settings #
+background no
+update_interval 1
+short_units yes
+cpu_avg_samples 2
+net_avg_samples 2
+default_shade_color grey
+#override_utf8_locale no
+
+double_buffer yes
+#no_buffers yes
+
+text_buffer_size 8192
+#imlib_cache_size 0
+
+#temperature_unit fahrenheit
+
+# Window specifications #
+
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+#################################################################################
+## This Resolution is set according to the sreen resolution of 1366x768  ########
+#################### Adjust Accoring to yours ###################################
+#################################################################################
+
+minimum_size 1280 768
+maximum_width 1920
+
+alignment tr
+gap_x 10
+gap_y 55
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+
+uppercase no
+
+temperature_unit celsius
+
+
+default_color 000000
+# Lua Load #
+lua_load ~/.lua/scripts/haunted.lua
+lua_draw_hook_pre clock_rings
+#############################################################################################
+## Adjust these fields according to the your screen size i have modded them for 1366X768  ###
+#############################################################################################
+TEXT
+${offset 300}${color EAEAEA}${font Santana:pixelsize=72}${time %A}${font}${voffset 20}${offset -200}${color 0077c0}${font GE Inspira:pixelsize=42}${time %d. }${color EAEAEA}${font GE Inspira:pixelsize=42}${time %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}
+${offset 720}${voffset -120}${font Santana:pixelsize=27}${color 0077c0}HD ${offset 9}$color${fs_used /} / ${fs_size /}${offset 20}${color 0077c0}RAM ${offset 9}$color$mem / $memmax${offset 30}
+${offset 720}${voffset 10}${color 0077c0}CPU1: ${offset 5}${color 111111}${cpu cpu0}% ${color 0077c0} CPU2: ${offset 5}${color 111111}${cpu cpu1}%${color 0077c0} CPU3: ${offset 5}${color 111111}${cpu cpu2}% ${color 0077c0} CPU4: ${offset 5}${color 111111}${cpu cpu3}%
+${voffset -60}${offset 291}${color 2a2a2a}${hr 4}
+#########################################################################
+####   uncomment if you want the old theme with weatherforecast  ########
+#########################################################################
+#${image ~/.conky/bg2.png} 
+
+#############################################################################
+####  uncomment & change /media/serge/data to desired folder  ###############
+#############################################################################
+
+#############################################################################
+######### data of old conky theme - uncomment if you want them       ########
+#############################################################################
+#${offset 120}${voffset -38}${font Santana:size=12:style=Bold}${color ffffff}root: ${font Santana:size=12}${fs_used /} / ${fs_size /}
+#${offset 120}${voffset 10}${font Santana:size=12:style=Bold}data: ${font Santana:size=12}${fs_used /media/serge/data} / ${fs_size /media/serge/data}$font
+#${offset 120}${voffset 8}${color ffffff}${font Santana:size=12:style=Bold}swap: ${font Santana:size=12}${swap} / ${swapfree}$font
+#${offset 570}${voffset -84} ${font Santana:size=12:style=Bold}Linux ${kernel} kernel
+#${offset 570}${voffset 0} ${font Santana:size=10}Uptime :${uptime}
+#${offset 835}${voffset -88}${color 555555}${font Santana:size=12:style=Bold}${exec whoami}@${nodename}
+#${offset 835}${voffset 0}${color 555555}${font Santana:size=10}${top name 5} ${top mem 5}
+#############################################################################
+############### new minimalistic conky theme    #############################
+#############################################################################
+
+#################################################################
+####   change wlan0 to your network card  #######################
+#################################################################
+
+
+#${offset 726}${voffset 73}${color 555555}${font Santana:size=12:style=Bold}IP: ${addr wlan0}
+#${offset 726}${voffset 0}${color 555555}${font Santana:size=10}Down :${downspeed wlan0} k/s ${offset 8}Up:${upspeed wlan0} k/s
+#################################################################
+############   uncomment for lan speed graph  ###################
+#################################################################
+#${offset 720}${voffset 10}${color 222222}${font Santana:size=8}TCP Connections: ${tcp_portmon 1 65535 count}
+
+#${offset 680}${voffset 10}${color ffffff}${font Santana:size=8}Speed Graph :
+#${voffset -10}${color ffffff}${font Santana:size=8}${color #000000}${downspeedgraph wlan0 32,150 000000 ffffff} ${color #000000}${upspeedgraph wlan0 32,150 000000 ffffff}
+#${offset 825}${voffset 20}${color ffffff}${font Santana:size=50} #Bat:  ${battery}
+
+###############################################################################
+####   uncomment and change LUXX0003 to your location code  ###################
+###############################################################################
+
+#week day
+#${font Santana:size=12}${goto 600}${color 000000}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=DW --startday=0}${goto 700}${color 000000}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=DW --startday=1}${goto 800}${color 000000}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=DW --startday=2}${goto 900}${color 000000}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=DW --startday=3}${goto 1000}${color 000000}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=DW --startday=4}
+#temperature
+#${goto 600}${color 0077c0}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 -u }/${color 222222}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=LT -u}${goto 707}${color 0077c0}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003  -u --startday=1}/${color 222222}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=LT -u --startday=1}${goto 814}${color 0077c0}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003  -u --startday=2}/${color 222222}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=LT -u --startday=2}${goto 921}${color 0077c0}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003  -u --startday=3}/${color 222222}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=LT -u --startday=3}${goto 1028}${color 0077c0}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003  -u --startday=4}/${color 222222}${execi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --datatype=LT -u --startday=4}
+
+
+${execpi 3 conkyForecast --config=~/.conky/.conkyForecast.config --location=LUXX0003 --template=$HOME/.conky/weather-template}

@@ -1,0 +1,54 @@
+################################################################################################
+#    BLO by Serge Wagner   								       #
+# published under CC-by-SA - so please let exerything inside, if you repack/modify this theme  #
+################################################################################################
+
+#############
+#  English  #
+#############
+BLO - blue variation of darkair theme for gnome-shell 
+Now gnome-shell 3.4-3.6-3.8 -3.9.3 - compatible
+Please notify me about any error you should find
+Get the latest version always on gnome-look.org
+launchpad & ppa is just going to be installed
+.deb and rpm packages to come
+
+
+Version 3.9.3 - published 27.06.2013 (published version: 3)
+gnome-shell 3.4-3.6-3.8 -3.9.3 compatible (tested with ubuntu saucy and ppa/ricotz
+- includes all the latest 3.4 fixes 
+- fixed notification overlay problem 
+- minor fixes, overlay notification fix
+
+GNOME DAILY BUILD / PPA-RICOTZ (so 3.9.3-user) - PLEASE READ
+Actually in gnome-shell is a bug (see bugzilla.gnome.org - BUG 702801) , that mixes gdm and gnome-shell theme
+
+To get the theme error-free, please use it also for gdm
+To change gdm theme , please use gdm3setup
+
+You will find a version for quite any distribution on 
+https://github.com/Nano77/gdm3setup
+
+Version 3.9.2
+ (published version: 2)
+ -tested with gnome-shell 3.9.2
+ -quite a lot of fine-tuning & corrections
+
+ 
+Version 3.9.1 - published 25.05.2013 
+Version 1 -but numbered after highest tested compatible gnome-shell theme 
+Blue variation of Darkair theme 
+
+
+Installation
+
+a) Copy Blue to /usr/share/themes (as superuser) or in your local .themes folder
+b) Copy the .conky and the .lua folder to your home folder (both folders are inside the conky folder)
+c) Copy the .conkyrc file to your home folder
+d) for the weatherforecast version
+    rename .conkyrccomplete in .conkyrc
+    sudo dpkg -i conkyforecast.deb
+    sudo apt-get -f install (fixes dependencies)
+e) read the Readme for conky-forecast
+
+If you do not wish to install the weatherforecast, please change in .configrc bg2.png to bg1.png 

@@ -1,0 +1,42 @@
+##################
+#  ConkyWeather  #
+##################
+
+#############
+#  English  #
+#############
+
+Install
+
+1. Unpack the downloaded archive
+2. Move files .conkyrc, .conkyForecast.config and .weather.template to your home direction
+3. Open files .conkyrc and .conkyForecast.config and rewrite all XXXXXXXX to zip code of your city, for example my is EZXX0029. Your zip code can check on http://xoap.weather.com/search/search?where=YOUR CITY
+4. In file .conkyrc, on line 56, you must change $HOME to your home direction (/home/YOUR_DIRECTION)
+5. You must install conkyForecast
+	5.1 ubuntu/debian - sudo apt-get install conkyforecast
+	5.2 fedora - sudo yum install conkyforecast
+6. For installation of icons please download the full conkyforecast theme at
+
+	sudo mv /usr/share/conkyforecast/images/weathericons /usr/share/conkyforecast/images/weathericons.old
+	sudo mv ~/weathericons /usr/share/conkyforecast/images/weathericons	
+7. Run command "conky -c /home/YOUR_DIRECTION/.conkyrc"
+8. Done!
+
+###########
+#  Česky  #
+###########
+
+Instalace
+
+1. Rozbalte stažený archív
+2. Přesuňte soubory .conkyrc, .conkyForecast.config a .weather.template do domovského adresáře
+3. Otevřete soubory .conkyrc a .conkyForecast.config a přepište všechny XXXXXXXX na zip kód vašeho města, například můj je EZXX0029. Zip kód se dozvíte na http://xoap.weather.com/search/search?where=VAŠE MĚSTO
+4. V souboru .conkyrc, na řádku 56 musíte změnit $HOME na vaši domovskou složku (/home/YOUR_DIRECTION)
+5. Musíte nainstalovat conkyForecast
+	5.1 ubuntu/debian - sudo apt-get install conkyforecast
+	5.2 fedora - sudo yum install conkyforecast
+6. Pro instalaci ikon počasí spusťte příkazy
+	sudo mv /usr/share/conkyforecast/images/weathericons /usr/share/conkyforecast/images/weathericons.old
+	sudo mv ~/weathericons /usr/share/conkyforecast/images/weathericons
+7. Spusťte příkaz conky -c /home/YOUR_DIRECTION/.conkyrc
+8. Hotovo!

@@ -1,0 +1,56 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont GE Inspira:size=10
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+gap_x 0
+gap_y 60
+alignment top_right
+
+minimum_size 350
+
+#########################
+# - Graphics settings - #
+#########################
+
+draw_shades no
+
+default_color ffffff
+default_shade_color 1d1d1d
+
+override_utf8_locale yes
+
+TEXT
+${voffset -8}${goto 75}${font style=bold:size=12}${execi 3 conkyForecast --location=XXXXXXXX --datatype=CN} | ${execi 3 conkyForecast --location=XXXXXXXX --datatype=HT}${font}
+${goto 75}${execi 3 conkyForecast --location=XXXXXXXX --datatype=CT}
+${goto 75}${font GE Inspira:style=bold:size=10}Humidity: ${font}${execi 3 conkyForecast --location=XXXXXXXX --datatype=HM} | ${font}${font GE Inspira:style=bold:size=10}Wind Speed: ${font}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WS -M}${font} | ${font}${font GE Inspira:style=bold:size=10}Barometer: ${font}${execi 3 conkyForecast --location=XXXXXXXX --datatype=BR -u} hPa${font}
+${goto 75}${font GE Inspira:style=bold:size=10}SunRise: ${font}${execi 3 conkyForecast --location=XXXXXXXX --datatype=SR} | ${font}${font GE Inspira:style=bold:size=10}SunSet: ${font}${execi 3 conkyForecast --location=XXXXXXXX --datatype=SS}${font}
+
+#${font ConkyWeather:size=30}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WF --startday=1}${goto 70}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WF --startday=2}${goto 140}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WF --startday=3}${goto 210}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WF --startday=4}${goto 280}${execi 3 conkyForecast --location=XXXXXXXX --datatype=WF --startday=5}${font}
+${voffset 43}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX --datatype=DW --startday=1}${goto 70}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX --datatype=DW --startday=2}${goto 140}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX --datatype=DW --startday=3}${goto 210}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX --datatype=DW --startday=4}${goto 280}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX --datatype=DW --startday=5}
+${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX  -u --startday=1}/${color b2b2b2}${execi 3 conkyForecast --location=XXXXXXXX --datatype=LT -u --startday=1}${goto 70}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX  -u --startday=2}/${color b2b2b2}${execi 3 conkyForecast --location=XXXXXXXX --datatype=LT -u --startday=2}${goto 140}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX  -u --startday=3}/${color b2b2b2}${execi 3 conkyForecast --location=XXXXXXXX --datatype=LT -u --startday=3}${goto 210}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX  -u --startday=4}/${color b2b2b2}${execi 3 conkyForecast --location=XXXXXXXX --datatype=LT -u --startday=4}${goto 280}${color ffffff}${execi 3 conkyForecast --location=XXXXXXXX  -u --startday=5}/${color b2b2b2}${execi 3 conkyForecast --location=XXXXXXXX --datatype=LT -u --startday=5}
+
+${execpi 3 conkyForecast --location=XXXXXXXX --template=$HOME/.weather.template}
